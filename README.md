@@ -12,3 +12,45 @@ The name of the agent was also created as qbagent-[specified pod name]-Agent sta
 
 
 Ingress can also be created using the pod name by specifying metadata.name as ${name}.
+
+Pod kustomization to use volumes
+----------------------------------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ${name}
+spec:
+  containers:
+  - name: ${name}
+    volumeMounts:
+    - name: ${volumename}
+      mountPath: /data/data
+#    resources:
+#      requests:
+#        cpu: 2000m
+#        memory: 8000m
+  volumes:
+  - name: ${volumename}
+  nodeSelector:
+    beta.kubernetes.io/os: linux
+  restartPolicy: Never
+-------------------------------------------------------------------------
+
+ingress sample yaml
+-------------------------------------------------------------------------
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ${name}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: test
+          servicePort: 80
+--------------------------------------------------------------------------------
