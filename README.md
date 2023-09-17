@@ -15,6 +15,7 @@ Ingress can also be created using the pod name by specifying metadata.name as ${
 
 Pod kustomization to use volumes
 ----------------------------------------------------------------
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -34,10 +35,12 @@ spec:
   nodeSelector:
     beta.kubernetes.io/os: linux
   restartPolicy: Never
+```
 -------------------------------------------------------------------------
 
 ingress sample yaml
 -------------------------------------------------------------------------
+```
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -53,4 +56,5 @@ spec:
         backend:
           serviceName: test
           servicePort: 80
+```
 --------------------------------------------------------------------------------
