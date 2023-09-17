@@ -17,8 +17,8 @@ install
 ----------------------------------------------------------------
 1. move com.pmease.quickbuild.plugin.cloud.kubernetes-custom_13.0.43.jar to quickbuild plugin folder
 2. ex) mv com.pmease.quickbuild.plugin.cloud.kubernetes-custom_13.0.43.jar /quickbuild-location-dir/plugins
-3. remove already exist com.pmease.quickbuild.plugin.cloud.kubernetes_13.0.43.jar
-4. ex) rm /quickbuild-location-dir/plugins/com.pmease.quickbuild.plugin.cloud.kubernetes-custom_13.0.43.jar
+3. remove old com.pmease.quickbuild.plugin.cloud.kubernetes_13.0.43.jar
+4. ex) rm /quickbuild-location-dir/plugins/com.pmease.quickbuild.plugin.cloud.kubernetes_13.0.43.jar
 5. quickbuild server restart
 ----------------------------------------------------------------
 
